@@ -1,0 +1,61 @@
+{
+  "_from": "awesome-bootstrap-checkbox@0.3.7",
+  "_id": "awesome-bootstrap-checkbox@0.3.7",
+  "_inBundle": false,
+  "_integrity": "sha1-sRKXPubVv/QKshfEIBhcRwJR0OI=",
+  "_location": "/awesome-bootstrap-checkbox",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "awesome-bootstrap-checkbox@0.3.7",
+    "name": "awesome-bootstrap-checkbox",
+    "escapedName": "awesome-bootstrap-checkbox",
+    "rawSpec": "0.3.7",
+    "saveSpec": null,
+    "fetchSpec": "0.3.7"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/awesome-bootstrap-checkbox/-/awesome-bootstrap-checkbox-0.3.7.tgz",
+  "_shasum": "b112973ee6d5bff40ab217c420185c470251d0e2",
+  "_spec": "awesome-bootstrap-checkbox@0.3.7",
+  "_where": "C:\\Users\\sn0026\\eclipse-workspace\\NewAuth",
+  "author": {
+    "name": "contact@flatlogic.com",
+    "url": "http://flatlogic.com"
+  },
+  "bugs": {
+    "url": "https://github.com/flatlogic/awesome-bootstrap-checkbox/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Font Awesome Bootstrap Checkboxes & Radios. Pure css way to make inputs look prettier.",
+  "files": [
+    "demo",
+    "awesome-bootstrap-checkbox.css",
+    "awesome-bootstrap-checkbox.scss",
+    "awesome-bootstrap-checkbox.less",
+    "bower.json"
+  ],
+  "homepage": "https://github.com/flatlogic/awesome-bootstrap-checkbox",
+  "keywords": [
+    "bootstrap",
+    "font-awesome",
+    "scss",
+    "less"
+  ],
+  "license": "MIT",
+  "main": "awesome-bootstrap-checkbox.css",
+  "name": "awesome-bootstrap-checkbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flatlogic/awesome-bootstrap-checkbox.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.3.7"
+}

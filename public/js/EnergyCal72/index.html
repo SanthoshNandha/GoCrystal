@@ -1,0 +1,41 @@
+<html>
+	<head>	
+		<script src="levelsParameters.js"></script>
+		<script src="idx_rp_new_to_ext.js"></script>
+		<script src="idx_rp_ext_to_new.js"></script>				
+		<script src="map_to_cluster2.js"></script>
+		<script src="nlist.js"></script>				
+		<script src="CalculateEnergyV4.js"></script>				
+	</head>
+	<body>
+		<h3>Calculating Energy with array given</h3>
+		<p>Enter the array values with 72 elements with commas eg : 0,0,-1,1,-1,0,0,1,0,0,-1,-1,0,0,1,1,1,1,1,0,-1,-1,1,1,1,1,-1,-1,0,-1,0,1,0,0,-1,1,-1,0,0,1,0,0,-1,-1,0,0,1,1,1,1,1,0,-1,-1,1,1,1,1,-1,-1,0,-1,0,1,0,0,-1,1,-1,0,0,1</p>
+		<br>
+		Array :<br>
+		<textarea id="arrayArea" cols="172" rows = "10"></textarea>
+
+		<p>Click the button to get the Calculated Energy.</p>
+
+		<button type="button" onclick="myFunction()">Calculate Energy</button>
+		
+		<p><b>Calculated Energy:<b></p>
+
+		<p id="demo"></p>
+
+		<script>
+			function myFunction() {
+				//var data_array_text = "0,0,-1,1,-1,0,0,1,0,0,-1,-1,0,0,1,1,1,1,1,0,-1,-1,1,1,1,1,-1,-1,0,-1,0,1,";
+				var data_array_text = document.getElementById("arrayArea").value;
+				data_array = data_array_text.split(",");
+				//console.log(data_array);
+				for(var i=0; i < data_array.length; i++){
+					data_array[i] = Number(data_array[i]);
+				}
+				
+				/* console.log("data_array length --> " + data_array.length); */
+				var energy = obtainEf2(data_array);
+				document.getElementById("demo").innerHTML = energy;
+			}
+		</script>		
+	</body>
+</html>

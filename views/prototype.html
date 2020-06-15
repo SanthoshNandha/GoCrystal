@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Prototype</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/external/w2ui-1.5.rc1.min.css" />
+    <link rel="stylesheet" href="stylesheets/fonts.css">
+    <link rel="stylesheet" href="stylesheets/demo.css">   
+    
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row gameScreen">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="row game-row-1">
+					<div class="col-sm-12 col-md-12 col-lg-12 game-atom-div-1">
+						<div class="row molecule-view-row">
+							<div class="col-sm-12 col-md-12 col-lg-12">
+								<div id="div1" class="molecule-view-div">
+									<input type="checkbox" name="pattern1" value="single" class = "patternCheck" id="patternCheck_1" checked> Single
+  									<input type="checkbox" name="pattern2" value="triangle" class = "patternCheck" id="patternCheck_2" checked> Triangle
+  									<input type="checkbox" name="pattern3" value="long" class = "patternCheck" id="patternCheck_3" checked> Long
+  									<input type="checkbox" name="pattern4" value="longDiagonal" class = "patternCheck" id="patternCheck_4" checked> Long Diagonal
+			  					</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	
+	<script type="text/javascript" src="../js/external/w2ui-1.5.rc1.min.js"></script>
+	
+    <script src="js/EnergyCal72/idx_rp_new_to_ext.js"></script>
+    <script src="js/EnergyCal72/map_to_cluster2.js"></script>
+    <script src="js/EnergyCal72/idx_rp_ext_to_new.js"></script>
+    <script src="js/EnergyCal72/nlist.js"></script>
+    <script src="js/EnergyCal72/CalculateEnergyV4.js"></script>
+    <script src="js/moleculePlacement.js"></script> <!--place atoms in division-->
+    <script src="js/variables.js"></script>
+    <script src="js/bondPatterns.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src="js/barChart2.js"></script>
+    <script src="js/barChart3.js"></script>
+    <script src="js/barChart4.js"></script>
+	<script src="js/energyLineChart.js"></script>
+    <script src="js/prototype.js"></script>
+</body>
+</html>

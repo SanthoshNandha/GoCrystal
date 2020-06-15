@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>GoCrystal</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/external/w2ui-1.5.rc1.min.css" />
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" media="all" href="stylesheets/font-awesome/css/font-awesome.min.css">
+	
+	 <!-- awesome-bootstrap-checkbox -->
+	 <link rel="stylesheet" media="all" href="stylesheets/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+
+    <link rel="stylesheet" href="stylesheets/fonts.css">
+    <link rel="stylesheet" href="stylesheets/demo.css">   
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row introScreen">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="jumbotron homeRow1">
+				    <h1>GoCrystal</h1>
+				    <p><input class="input-sm" id="playerName"  placeholder="Enter Name" type="text" size="40" style="color:black;"></p>		    
+				    <div class="start-btn-div btn-div">
+				    	<button type="button" class="btn btn-default btn-circle btn-xl" onclick="loading()">
+				    		Start
+				    	</button>
+				    </div>
+				    <div class="scratch-btn-div btn-div">
+				    	<button type="button" class="btn btn-default btn-xl" onclick="startScratch()">
+				    		Scratch Mode
+				    	</button>
+				    </div>
+				</div>
+			</div>
+			<div class="row intro-row-2">
+				<div id = "introdiv2" class="col-sm-6 col-md-6 col-lg-6 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 intro-control-div-5">
+					<div class="row">
+						<div class="col-sm-10 col-md-10 col-lg-10" style="color:white; padding-top: 25px;">
+							<ul class="list-group instruction-section">
+								<li>
+									We want a stable material. Only low energy materials are stable.
+								</li>
+								<li >
+									The energy of material is dependent on the patterns of atomic arrangement.
+								</li>
+								<li>
+									You will be given a layers of atoms. Click each atom to switch its occupation.
+								</li>
+								<li>
+									Arrange Li (Green), Ni (Red), Co (Blue) to find favorable patterns! 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row levelSelectionScreen hidden">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+					<div class="row jumbotron homeRow1">
+						<h1>Select Level</h1>
+					</div>
+				</div> 
+				<div class="row">
+					<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+						<div class="row" id="levelSelectionArea">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row endScreen hidden">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="jumbotron">
+           			<h1> GameOver </h1>
+           			<div id="summaryView" class="table-responsive">
+           			</div>
+           			<div class="reStart-btn-div btn-div">
+			    		<button type="button" class="btn btn-default btn-circle btn-xl-restart" onclick="restartGame()">
+			    			<i class="glyphicon glyphicon-repeat"></i>
+			    			Restart
+			    		</button>
+			    	</div>
+        		</div>
+    		</div>
+		</div>
+		<div class="row summaryScreen hidden">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="jumbotron">
+					<h3> Level <span id="levelCompleted"></span> Completed</h3>
+           			<h3> Summary </h3>
+           			<div id="LevelSummaryView" class="table-responsive">
+           				<div style="padding-top: 10px; padding-left: 5px; font-size: 25px;">
+           					<table class="table table-bordered table-condensed" style="width: 95%; margin: 0px auto;">
+       	        				<tr style="height: 40px;"> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="text-align: center;">Target Energy(eV)</td> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4" id="levelTargetEnergy" style="text-align: center;"></td>
+       	        				</tr>
+       	        				<tr style="height: 40px;"> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="text-align: center;">Energy Achieved(eV)</td> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4"  id="levelEnergyAchieved" style="text-align: center;"></td>
+       	        				</tr>
+       	        				<tr style="height: 40px;"> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="text-align: center;">Steps Used</td> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4" id="levelStepsUsed" style="text-align: center;"></td>
+       	        				</tr>
+       	        				<!-- <tr style="height: 40px;"> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="text-align: center;">Max. Temperature(K)</td> 
+       	        					<td class="col-sm-4 col-md-4 col-lg-4" id="levelMaxTemp" style="text-align: center;"></td>
+       	        				</tr> -->
+       	        			</table>
+       	        		</div>
+           			</div>
+           			<div class="nextBtn-btn-div btn-div" style="padding-top:15px;">
+			    		<button id="levelNextBtn" type="button" class="btn btn-default btn-circle btn-xl-nextLevel">
+			    			<i class="glyphicon glyphicon-step-forward"></i>
+			    			Next Level
+			    		</button>
+			    	</div>
+        		</div>
+    		</div>
+		</div>
+		<div class="row gameScreen hidden">
+			<div class="row game-row-0">
+				<div id="" class="col-sm-2 col-md-2 col-lg-2">
+					<div class="level-label col-xs-3">
+						<span>Level</span>
+					</div>
+					<div id="level-display" class="level-display-div col-xs-3"></div>
+					<div class="time-label col-xs-3">
+						<span>Time</span>
+					</div>
+					<div id="timer" class="time-display-div col-xs-3"></div>
+				 </div>
+				<div class="col-sm-7 col-md-7 col-lg-7">
+					<div id="div5">
+						<div id="timerBar">
+							<div id="timeProgressBar"></div>
+						</div>
+					</div>
+				</div>
+				<div id="div6" class="col-sm-3 col-md-3 col-lg-3">
+					<div class="row">
+						<div class="used-steps-label col-sm-1 col-md-1 col-lg-1">
+								<span>Your</span>
+								<br><span>Score</span>
+						</div>
+						<div class="scoreStep-div col-sm-2 col-md-2 col-lg-2"></div>
+						<div class="used-steps-label col-sm-1 col-md-1 col-lg-1">
+							<span>Steps</span>
+							<br><span>Used</span>
+						</div>
+						<div class="usedStep-div col-sm-2 col-md-2 col-lg-2"></div>
+						<div class="max-steps-label col-sm-1 col-md-1 col-lg-1">
+							<span>High</span>
+							<br>
+							<span>Score</span>
+						</div>
+						<div class="maxSteps-div col-sm-2 col-md-2 col-lg-2">0</div>
+					</div>
+				 </div>
+			</div>
+			<div class="row game-row-1">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="row game-row-1">
+						<div class="col-sm-12 col-md-12 col-lg-12 game-atom-div-1">
+							<div class="row molecule-view-row">
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									<div class="row">
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									<div id="div1" class="molecule-view-div row">
+										<div class="col-sm-1 col-md-1 col-lg-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+											<div class="reportCheckbox checkbox checkbox-black checkbox-circle">
+												<input type="checkbox" name="pattern1" value="single" class="reportCheckbox patternCheck" id="patternCheck_1" checked="true">
+												<label>Single</label>
+											</div>
+										</div>
+										<div class="col-sm-1 col-md-1 col-lg-1">
+											<div class="reportCheckbox checkbox checkbox-black checkbox-circle">
+												<input type="checkbox" name="pattern2" value="triangle" class="reportCheckbox patternCheck" id="patternCheck_2" checked="true">
+												<label>Triangle</label>
+											</div>
+										</div>
+										<div class="col-sm-1 col-md-1 col-lg-1">
+											<div class="reportCheckbox checkbox checkbox-black checkbox-circle">
+												<input type="checkbox"  name="pattern3" value="long" class="reportCheckbox patternCheck" id="patternCheck_3" checked="false" disabled>
+												<label>Long</label>
+											</div>
+										</div>
+										<div class="col-sm-2 col-md-2 col-lg-2">
+											<div class="reportCheckbox checkbox checkbox-black checkbox-circle">
+												<input type="checkbox"  name="pattern4" value="longDiagonal" class="reportCheckbox patternCheck" id="patternCheck_4" checked="false" disabled>
+												<label>Long Diagonal</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	
+	<script type="text/javascript" src="../js/external/w2ui-1.5.rc1.min.js"></script>
+	
+	<script src="js/EnergyCal72/idx_rp_new_to_ext.js"></script>
+    <script src="js/EnergyCal72/map_to_cluster2.js"></script>
+    <script src="js/EnergyCal72/idx_rp_ext_to_new.js"></script>
+    <script src="js/EnergyCal72/nlist.js"></script>
+    <script src="js/EnergyCal72/CalculateEnergyV4.js"></script>
+    <script src="js/moleculePlacement.js"></script> <!--place atoms in division-->
+    <script src="js/variables.js"></script>
+    <script src="js/bondPatterns.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src="js/barChart2.js"></script>
+    <script src="js/barChart3.js"></script>
+    <script src="js/barChart4.js"></script>
+	<script src="js/energyLineChart.js"></script>
+	<script src="js/Objects.js"></script>
+	<script src="js/variables.js"></script>
+	<script src="js/selectLevel.js"></script>
+	<script src="js/limitTable.js"></script>
+	<script src="js/moleculeGrid.js"></script>
+	<script src="js/gameM1.js"></script>
+	
+	<!-- <script src="js/prototype.js"></script> -->
+</body>
+</html>

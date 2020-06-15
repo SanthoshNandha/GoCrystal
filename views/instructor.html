@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Instructor View</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/external/w2ui-1.5.rc1.min.css" />
+    <link rel="stylesheet" href="stylesheets/fonts.css">
+    <link rel="stylesheet" href="stylesheets/demo.css">
+    <link rel="stylesheet" href="stylesheets/instructorView.css">  
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row gameScreen">
+			<div class="row instructorRow-0">
+				<div class="col-sm-1 col-md-1 col-lg-1 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+					<div class="form-group">
+				 		Select Level:
+				 		<select class="form-control" id="level" style="height:30px; width:150px;">
+					  	</select>
+					</div>
+				</div>
+			</div>
+			<div class="row game-row-1">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 game-atom-div-1">
+					<div class="row layer-label-row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="layer-label-div">
+								Layer A
+							</div>
+						</div>
+					</div>
+					<div class="row molecule-view-row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div id="div1" class="molecule-view-div">
+		  					</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 game-atom-div-2">
+					<div class="row layer-label-row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="layer-label-div">
+								Layer B
+							</div>
+						</div>
+					</div>
+					<div class="row molecule-view-row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div id="div2" class="molecule-view-div">
+		 					</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row game-row-2">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+					<div class="form-group" id="levelDescriptionGroup">
+					    <label for="levelDescription">Level Description</label>
+					    <input class="form-control input-sm inputSpace" id="levelDescription" type="text">
+				  </div>
+					<div class="form-group" id="InitialEnergyGroup">
+					    <label for="InitialEnergy">Initial Energy (eV)</label>
+					    <input class="form-control input-sm inputSpace" id="InitialEnergy" type="number" maxlength="6" readonly>
+				  </div>
+				  <div class="form-group" id="targetEnergyGroup">
+				    <label for="targetEnergy">Target Energy (eV)</label>
+				    <input class="form-control input-sm inputSpace" id="targetEnergy" type="number" maxlength="6" min="-3" max="3" step="0.01">
+				  </div>
+				  <div class="form-group" id="maxStepsGroup">
+				    <label for="maxSteps">Maximum Steps Allowed</label>
+				    <input class="form-control input-sm inputSpace" id="maxSteps" type="number" maxlength="6" min="0">
+				  </div>
+				  <div class="form-group" id="maxStepsGroup">
+				    <label for="maxTime">Maximum Time Allowed (Seconds)</label>
+				    <input class="form-control input-sm inputSpace" id="maxTime" type="number" maxlength="6" min="0">
+				  </div>
+				  <div class="form-group" id="maxLiGroup">
+				    <label for="maxLi">Maximum Li Molecules Allowed </label>
+				    <input class="form-control input-sm inputSpace" id="maxLi" type="number" maxlength="32" min="0">
+				  </div> 
+				  <div class="form-group" id="maxNiGroup">
+				    <label for="maxNi">Maximum Ni Molecules Allowed</label>
+				    <input class="form-control input-sm inputSpace" id="maxNi" type="number" maxlength="32" min="0">
+				  </div>
+				  <div class="form-group" id="maxCoGroup">
+				    <label for="maxCo">Maximum Co Molecules Allowed</label>
+				    <input class="form-control input-sm inputSpace" id="maxCo" type="number" maxlength="32" min="0">
+				  </div>
+				  <div class="form-group" id="minLiGroup">
+				    <label for="minLi">Number of Li Molecules should be used </label>
+				    <input class="form-control input-sm inputSpace" id="minLi" type="number" maxlength="32" min="0">
+				    <small class="form-text text-muted">Enter -1 if No minimum number is required</small>
+				  </div>
+				  <div class="form-group" id="minNiGroup">
+				    <label for="minNi">Number of Ni Molecules should be used</label>
+				    <input class="form-control input-sm inputSpace" id="minNi" type="number" maxlength="32" min="0">
+				    <small class="form-text text-muted">Enter -1 if No minimum number is required</small>
+				  </div>
+				  <div class="form-group" id="minCoGroup">
+				    <label for="minCo">Number of Co Molecules should be used</label>
+				    <input class="form-control input-sm inputSpace" id="minCo" type="number" maxlength="32" min="0">
+				    <small class="form-text text-muted">Enter -1 if No minimum number is required</small>
+				  </div>
+				  <div class="form-group" id="maxIntervalGroup">
+				    <label for="minSwap">Maximum Time Interval for a Swap Test (Seconds)</label>
+				    <input class="form-control input-sm inputSpace" id="maxInterval" type="number">
+				  </div>
+				  <div class="form-group" id="maxFrequencyGroup">
+				    <label for="maxSwap">Maximum Frequency for Swap Test for Maximum Temperature (Swap tests per second)</label>
+				    <input class="form-control input-sm inputSpace" id="maxFrequency" type="number" maxlength="6">
+				  </div>
+				  <!-- <div class="form-group">
+				    <label for="minSwap">Minimum Swap Duration for Maximum Temperature (Milliseconds)</label>
+				    <input class="form-control input-sm inputSpace" id="minSwap" type="number" maxlength="6" min="1000">
+				  </div>
+				  <div class="form-group">
+				    <label for="maxSwap">Maximum Swap Duration for Minimum Temperature (Milliseconds)</label>
+				    <input class="form-control input-sm inputSpace" id="maxSwap" type="number" maxlength="6" min="1000">
+				  </div> -->
+				  <div class="form-group" id="considerStepsGroup">
+				    <label for="considerSteps">Consider Steps</label>
+						<select class="form-control inputSpace" id="considerSteps">
+						    <option value="true" selected>True</option>
+						    <option value="false">False</option>						    
+						 </select>
+				  </div>
+				  <div class="form-group" id="updateConfigGroup">
+					<button id="updateConfig" style="color:black;">Update Config </button>
+				  </div>				  
+				</div> 
+				<div class="col-sm-4 col-md-4 col-lg-4 game-control-div-2" style="padding-top: 5px;">
+					<div id="div3">
+		 			 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	 
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	
+	<script type="text/javascript" src="../js/external/w2ui-1.5.rc1.min.js"></script>
+	
+    <script src="js/EnergyCal/idx_rp_new_to_ext.js"></script>
+    <script src="js/EnergyCal/idx_rp_ext_to_new.js"></script>
+    <script src="js/EnergyCal/map_to_cluster2.js"></script>
+    <script src="js/EnergyCal/nlist.js"></script>
+    <script src="js/EnergyCal/CalculateEnergyV3.js"></script>
+    <script src="js/AtomPlacement.js"></script> <!--place atoms in division-->
+    <script src="js/adjacentArray.js"></script> <!--get the atom and their adjacent atom-->
+    <script src="js/Objects.js"></script> <!--objects to display timer and show  message still in progress-->
+    <script src="js/variables.js"></script>
+    <script src="js/instructMain.js"></script>
+</body>
+</html>

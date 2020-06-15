@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/AvenirNext/Regular/avenirnextregular.eot');
+    src: 
+    	 url('fonts/AvenirNext/Regular/avenirnextregular.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Regular/avenirnextregular.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Regular/avenirnextregular.woff')
+    	format('woff');
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/AvenirNext/Bold/avenirnextbold.eot');
+    src: 
+    	 url('fonts/AvenirNext/Bold/avenirnextbold.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Bold/avenirnextbold.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Bold/avenirnextbold.woff')
+    	format('woff');
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url('fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url('fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 600;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url(fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url('fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 800;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url('fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
+@font-face {
+    font-family: 'AvenirNext';
+    font-style: normal;
+    font-weight: 900;
+    src: url('fonts/AvenirNext/Medium/avenirnextmedium.eot');
+    src: 
+    	 url('fonts/AvenirNext/Medium/avenirnextmedium.otf')
+    	 format('opentype');
+     src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.ttf')
+    	format('truetype');
+    src: 
+    	url('fonts/AvenirNext/Medium/avenirnextmedium.woff')
+    	format('woff');
+}
